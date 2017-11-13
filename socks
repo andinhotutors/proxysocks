@@ -25,7 +25,7 @@ while true $x != "teste"
 do
 clear
 echo "================================================"
-tput setaf 8 ; tput setab 5 ; tput bold ; printf '%30s%s%-15s\n' "DROPBEAR ANDERSONTLS" ; tput sgr0
+tput setaf 8 ; tput setab 5 ; tput bold ; printf '%30s%s%-15s\n' "SOCKS5 ANDERSONTLS" ; tput sgr0
 tput setaf 8 ; tput setab 5 ; tput bold ; printf '%30s%s%-15s\n' "CRIADOR ANDERSONTLS" ; tput sgr0
 echo -e "\033[01;34m•>>>>> (COPIA NAO COMEDIA) <<<<<•\033[01;34m"
 echo -e "\033[01;34m•>>>>> (@kroz44) <<<<<•\033[01;34m"
@@ -74,11 +74,10 @@ echo "================================================"
 echo "================================================"
 ;;
    3)
-      echo "REMOVENDO AGUARDE..."
-      echo "DIGITE python3.6 PARA DESISTALAR E DE ENTER..."
-      read nome
-      apt-get remove --purge $nome
-      apt-get remove python3.6
+      echo "CONFIGURANDO PARA EXECUÇAO AGUARDE..."
+      mkidr proxy5
+      cd proxy5
+      wget 
       apt-get autoremove
       sleep 5
 echo "================================================"
