@@ -77,8 +77,22 @@ echo "================================================"
       echo "CONFIGURANDO PARA EXECUÇAO AGUARDE..."
       mkidr proxy5
       cd proxy5
-      wget 
-      apt-get autoremove
+      echo "QUAL PORTA DESEJA USA 80,8080,8799 DIGITE A PORTA?..."
+      read -p porta
+      echo >> {
+      "porta": $porta, >> /proxy5/config.json
+      echo "QUAL MESSAGEN NO STATUS 200OK DIGITE..."
+      read -p resposta
+      echo >> "resposta": "$resposta" >> /proxy5/config.json
+      echo "DIGITE O IP DA SUA VPS..."
+      read -p ip
+      echo >> "servers": "127.0.0.1 $ip"
+
+}     >> /proxy5/config.json
+      wget https://raw.githubusercontent.com/andinhotutors/proxysocks/master/proxy.py
+      apt-get install screen -y
+      screen
+      python3 proxy.py
       sleep 5
 echo "================================================"
 ;;
