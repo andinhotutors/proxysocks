@@ -60,16 +60,19 @@ echo "================================================"
       echo "CONFIGURANDO PARA EXECUÇAO AGUARDE..."
       mkdir /root/proxy5
       cd /root/proxy5
+      touch config.json
       echo "QUAL PORTA DESEJA USA 80,8080,8799 DIGITE A PORTA?..."
       read -p "porta: " porta
       echo >> {
-      "porta": $porta, >> /proxy5/config.json
+      "porta": $porta, >> /root/proxy5/config.json
       echo "QUAL MESSAGEN NO STATUS 200OK DIGITE..."
       read -p "resposta: " resposta
-      echo >> "resposta": "$resposta" >> /proxy5/config.json
+      echo >> "resposta": "$resposta" >> /root/proxy5/config.json
       echo "DIGITE O IP DA SUA VPS..."
       read ip
       echo >> "servers": "127.0.0.1 $ip"
+      
+}     >> /root/proxy5/config.json      
       sleep 5      
 echo "================================================"
 ;;
