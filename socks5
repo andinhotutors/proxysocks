@@ -58,17 +58,17 @@ echo "================================================"
 ;;
    3)
       echo "CONFIGURANDO PARA EXECUÇAO AGUARDE..."
-      mkidr proxy5
-      cd proxy5
+      mkdir /root/proxy5
+      cd /root/proxy5
       echo "QUAL PORTA DESEJA USA 80,8080,8799 DIGITE A PORTA?..."
-      read -p porta
+      read -p "porta: " porta
       echo >> {
       "porta": $porta, >> /proxy5/config.json
       echo "QUAL MESSAGEN NO STATUS 200OK DIGITE..."
-      read -p resposta
+      read -p "resposta: " resposta
       echo >> "resposta": "$resposta" >> /proxy5/config.json
       echo "DIGITE O IP DA SUA VPS..."
-      read -p ip
+      read ip
       echo >> "servers": "127.0.0.1 $ip"
       sleep 5      
 echo "================================================"
