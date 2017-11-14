@@ -38,12 +38,13 @@ case "$x" in
 
     1)
       echo "INSTALANDO PYTHON3.6 AGUARDE..."
-      echo "APERTE ENTER..."
+      echo -e "\033[01;33m (TECLE ENTER)\033[0m"
       sudo add-apt-repository ppa:jonathonf/python-3.6
-      echo "TECLE ENTER..."
+      echo -e "\033[01;33m (TECLE ENTER PARA CONTINUAR)\033[0m"
       read enter
       sudo apt-get update
       sudo apt-get install python3.6 -y
+      echo "INSTALANDO COM SUCESSO..."
       sleep 5
       
 echo "================================================"
@@ -51,7 +52,7 @@ echo "================================================"
     2)
       echo "INSTALANDO SOCKS"
       sudo apt-get update
-      sudo apt-get install python3.6
+      sudo apt-get install python3.6 -y
       sleep 5
 echo "================================================"
 ;;
