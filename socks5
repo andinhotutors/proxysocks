@@ -6,23 +6,26 @@ while true $x != "teste"
 do
 clear
 echo "================================================"
-echo "Mini script"
-echo "Criado por: Alex Marques"
+tput setaf 8 ; tput setab 5 ; tput bold ; printf '%30s%s%-15s\n' "SOCKS5 ANDERSONTLS" ; tput sgr0
+tput setaf 8 ; tput setab 5 ; tput bold ; printf '%30s%s%-15s\n' "CRIADOR ANDERSONTLS" ; tput sgr0
+echo -e "\033[01;34m•>>>>> (COPIA NAO COMEDIA) <<<<<•\033[01;34m"
+echo -e "\033[01;34m•>>>>> (@kroz44) <<<<<•\033[01;34m"
 echo ""
-echo "1)Instalar um programa"
+echo -e "(1)\033[01;34m•>>>>> (INSTALAR PTHON3.6 UBUNTU14.04 16.04 \033[01;34m"
 echo""
-echo "2)Remover um programa"
+echo -e "(2)\033[01;33m•>>>>> (INSTALAR PTHON3.6 UBUNTU16.10 17.04)\033[0m"
 echo ""
-echo "3)Atualizar o sitema"
+echo -e "(3)\033[01;33m•>>>>> (EXECUTA SOCKS5)\033[0m"
 echo ""
-echo "4)Instalar dependências"
+echo -e "(4)\033[01;33m•>>>>> (REMOVE PYTHON3.6)\033[0m"
 echo""
-echo "5)Limpando programas defeituosos "
+echo -e "(5)\033[01;33m•>>>>> (PARA SQUID NO UBUNTU 14.04)\033[0m"
 echo""
-echo "6)Corrigir erros"
+echo -e "(6)\033[01;33m•>>>>> (PARA SQUID NO UBUNTU 14.04)\033[0m"
 echo""
-echo "7)Sair do programa"
+echo -e "(7)\033[01;33m•>>>>> (PARA SQUID NO DEBIAM,UBUNTU 16)\033[0m"
 echo ""
+eecho -e "(8)\033[01;33m•>>>>> (SAIR DO SCRIPT)\033[0m"
 echo "================================================"
 
 echo "Digite a opção desejada:"
@@ -34,23 +37,36 @@ case "$x" in
 
 
     1)
-      echo "Informe o nome do pacote para ser instalado?"
-      read nome
-      apt-get install $nome
+      echo "INSTALANDO PYTHON3.6 AGUARDE..."
+      sudo add-apt-repository ppa:jonathonf/python-3.6
+      read enter
+      sudo apt-get update
+      sudo apt-get install python3.6 -Y
       sleep 5
       
 echo "================================================"
 ;;
     2)
-      echo "Informe o nome do pacote para ser removido?"
-      read nome
-      apt-get remove --purge $nome
+      echo "INSTALANDO SOCKS"
+      sudo apt-get update
+      sudo apt-get install python3.6
       sleep 5
 echo "================================================"
 ;;
    3)
-      echo "Atualizando sistema..."
-      apt-get update
+      echo "CONFIGURANDO PARA EXECUÇAO AGUARDE..."
+      mkidr proxy5
+      cd proxy5
+      echo "QUAL PORTA DESEJA USA 80,8080,8799 DIGITE A PORTA?..."
+      read -p porta
+      echo >> {
+      "porta": $porta, >> /proxy5/config.json
+      echo "QUAL MESSAGEN NO STATUS 200OK DIGITE..."
+      read -p resposta
+      echo >> "resposta": "$resposta" >> /proxy5/config.json
+      echo "DIGITE O IP DA SUA VPS..."
+      read -p ip
+      echo >> "servers": "127.0.0.1 $ip"
       sleep 5
 echo "================================================"
 ;;
@@ -66,15 +82,22 @@ echo "================================================"
        sleep 5
 echo "================================================"
 ;;
-    6) 
-    echo "Reparando..."
-    dpkg --configure -a
-    sleep 5
+     6) 
+       echo "Reparando..."
+       dpkg --configure -a
+       sleep 5
 
 echo "================================================"
+;;
+    7) 
+      echo "Reparando..."
+      dpkg --configure -a
+      sleep 5
+    
+echo "================================================"    
  ;;     
-       7)
-         echo "saindo..."
+    8)
+      echo "saindo..."
          sleep 5
          clear;
          exit;
