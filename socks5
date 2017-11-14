@@ -70,9 +70,9 @@ echo "================================================"
       echo >> "resposta": "$resposta" >> proxy5/config.json
       echo "DIGITE O IP DA SUA VPS..."
       read ip
-      echo >> "servers": "127.0.0.1 $ip"
+      echo >> "servers": "127.0.0.1 $ip" 
       
-      }     >> proxy5/config.json      
+      } >> proxy5/config.json
       sleep 5      
 echo "================================================"
 ;;
