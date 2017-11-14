@@ -25,7 +25,7 @@ echo -e "(6)\033[01;33m•>>>>> (PARA SQUID NO UBUNTU 14.04)\033[0m"
 echo""
 echo -e "(7)\033[01;33m•>>>>> (PARA SQUID NO DEBIAM,UBUNTU 16)\033[0m"
 echo ""
-eecho -e "(8)\033[01;33m•>>>>> (SAIR DO SCRIPT)\033[0m"
+echo -e "(8)\033[01;33m•>>>>> (SAIR DO SCRIPT)\033[0m"
 echo "================================================"
 
 echo "Digite a opção desejada:"
@@ -68,26 +68,31 @@ echo "================================================"
       echo "DIGITE O IP DA SUA VPS..."
       read -p ip
       echo >> "servers": "127.0.0.1 $ip"
-      sleep 5
+      sleep 5      
 echo "================================================"
 ;;
     4)
-       echo "Iniciando o processo..."
-       apt-get -f install
-       sleep 5
+      echo "REMOVENDO AGUARDE..."
+      echo "DIGITE python3.6 PARA DESISTALAR E DE ENTER..."
+      read nome
+      apt-get remove --purge $nome
+      apt-get remove python3.6
+      apt-get autoremove
+      sleep 5      
 echo "================================================"
 ;;      
      5)  
-       echo "Corrigindo erros..." 
-       apt-get autoremove
-       sleep 5
+      echo "PARANDO SQUID..."
+      service squid3 stop
+      service squid stop
+      sleep 5     
 echo "================================================"
 ;;
      6) 
-       echo "Reparando..."
-       dpkg --configure -a
+       echo "PARANDO SQUID..."
+       /etc/init.d/squid3 stop
+       /etc/init.d/squid3 stop
        sleep 5
-
 echo "================================================"
 ;;
     7) 
@@ -99,7 +104,7 @@ echo "================================================"
  ;;     
     8)
       echo "saindo..."
-         sleep 5
+         sleep 3
          clear;
          exit;
 echo "================================================"
