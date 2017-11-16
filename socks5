@@ -58,20 +58,20 @@ echo "================================================"
 ;;
    3)
       echo "CONFIGURANDO PARA EXECUÇAO AGUARDE..."
-      mkdir /root/proxy5
-      cd /root
-      touch proxy5/config.json
+      mkdir /etc/proxy5
+      cd /etc/proxy5
+      touch /etc/proxy5/config.json
       echo "QUAL PORTA DESEJA USA 80,8080,8799 DIGITE A PORTA?..."
       read -p "porta: " porta
-      echo " {
-      "porta": $porta,' >> proxy5/config.json
+      echo "{
+      "porta": $porta," >> /etc/proxy5/config.json
       echo "QUAL MESSAGEN NO STATUS 200OK DIGITE..."
       read -p "resposta: " resposta
-      echo " "resposta": "$resposta"' >> proxy5/config.json
+      echo " "resposta": "$resposta"' >> /etc/proxy5/config.json
       echo "DIGITE O IP DA SUA VPS..."
       read ip
-      echo " "servers": "127.0.0.1 $ip"' >> proxy5/config.json
-      sleep 5      
+      echo " "servers": "127.0.0.1 $ip" }" >> /etc/proxy5/config.json
+      sleep 5 
 echo "================================================"
 ;;
     4)
